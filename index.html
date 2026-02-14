@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0f2e">
+<link rel="manifest" href="manifest.json">
+<title>Portfólio Executivo Municipal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg1:#0a0f2e;
+  --bg2:#0d1b3d;
+  --ocean:#0ea5e9;
+  --purple:#a855f7;
+  --gold:#f5c542;
+  --gold-soft:#ffd978;
+  --text:#f8fafc;
+  --muted:#cbd5e1;
+  --glass:rgba(255,255,255,0.06);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Inter', sans-serif;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--text);
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:45px 20px 30px;
+  text-align:center;
+  background:linear-gradient(90deg,#0a0f2e,#111c48);
+  box-shadow:0 0 40px rgba(168,85,247,.25);
+}
+
+header h1{
+  font-size:24px;
+  font-weight:700;
+  background:linear-gradient(90deg,var(--purple),var(--ocean),var(--gold));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:.6px;
+}
+
+header p{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ===== RESUMO ===== */
+.resumo{
+  margin:0 20px 25px;
+  padding:22px;
+  border-radius:18px;
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(168,85,247,.25);
+  box-shadow:0 0 25px rgba(14,165,233,.15);
+}
+
+.resumo h3{
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:12px;
+}
+
+.resumo ul{
+  margin-left:18px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ===== BUSCA ===== */
+.search-container{
+  margin:0 20px 30px;
+}
+
+.search-container input{
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid rgba(168,85,247,.3);
+  background:rgba(255,255,255,0.05);
+  color:white;
+  font-size:14px;
+  outline:none;
+  box-shadow:0 0 15px rgba(168,85,247,.2);
+}
+
+.search-container input:focus{
+  border-color:var(--ocean);
+  box-shadow:0 0 20px rgba(14,165,233,.4);
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  gap:22px;
+  padding:0 20px 50px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  padding:22px;
+  border-radius:20px;
+  border:1px solid rgba(14,165,233,.2);
+  transition:.35s ease;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(168,85,247,.15);
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:var(--purple);
+  box-shadow:0 0 35px rgba(168,85,247,.35);
+}
+
+.card h3{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:8px;
+  color:var(--gold);
+}
+
+.card p{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:5px;
+}
+
+/* ===== DETAIL ===== */
+.detail{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#0a0f2e,#111c48);
+  padding:28px;
+  overflow:auto;
+  display:none;
+}
+
+.detail h2{
+  font-size:22px;
+  margin-bottom:18px;
+  background:linear-gradient(90deg,var(--purple),var(--ocean));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.section{
+  margin-top:20px;
+}
+
+.section h4{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+
+.section p,.section li{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.section ul{
+  margin-left:18px;
+}
+
+button{
+  margin-top:25px;
+  padding:14px;
+  width:100%;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(90deg,var(--purple),var(--ocean));
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(168,85,247,.35);
+  transition:.3s;
+}
+
+button:hover{
+  box-shadow:0 0 35px rgba(14,165,233,.5);
+}
+
+/* ===== RESPONSIVO ===== */
+@media(min-width:768px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(min-width:1200px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Portfólio Executivo Municipal</h1>
+  <p>Documento estratégico estruturado para apresentação institucional</p>
+</header>
+
+<section class="resumo">
+  <h3>Resumo Executivo</h3>
+  <ul>
+    <li>26 propostas estruturadas por área estratégica.</li>
+    <li>Foco em impacto social imediato e visibilidade institucional.</li>
+    <li>Projetos escaláveis conforme disponibilidade orçamentária.</li>
+    <li>Execução objetiva e mensurável.</li>
+    <li>Organização pronta para apresentação executiva.</li>
+  </ul>
+</section>
+
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Buscar projeto, área, impacto ou palavras-chave...">
+</div>
+
+<main class="grid" id="grid"></main>
+
+<section class="detail" id="detail">
+  <div id="detailContent"></div>
+</section>
+
+<script>
+
+// >>> ARRAY COMPLETO DOS 26 PROJETOS (INALTERADO) <<<
+const projetos = [
+{titulo:"Calçada Acessível",area:"Infraestrutura",impacto:"Cidade organizada e inclusiva",impactoPolitico:"Alta visibilidade urbana e apoio de idosos e PCDs.",resumo:"Padronização e melhoria das calçadas.",objetivo:"Garantir acessibilidade urbana.",justificativa:"Irregularidades geram quedas e riscos jurídicos.",estrategia:["Decreto padronizador","Manual técnico","Fiscalização gradual"],resultados:["Redução de acidentes","Valorização urbana"]},
+{titulo:"Reforma Express de Quadras",area:"Esporte",impacto:"Juventude engajada",impactoPolitico:"Fortalece imagem junto à juventude.",resumo:"Revitalização rápida de quadras.",objetivo:"Recuperar espaços esportivos.",justificativa:"Espaços abandonados estimulam vandalismo.",estrategia:["Pintura","LED","Reparos estruturais"],resultados:["Redução ociosidade"]},
+{titulo:"Fila Zero (Exames)",area:"Saúde",impacto:"Impacto imediato",impactoPolitico:"Reduz reclamações e fortalece gestão.",resumo:"Redução de filas reprimidas.",objetivo:"Diminuir espera.",justificativa:"Exames tardios agravam doenças.",estrategia:["Mutirões","Credenciamento"],resultados:["Fila reduzida"]},
+{titulo:"Mutirão de Cirurgias Eletivas",area:"Saúde",impacto:"Alto impacto social",impactoPolitico:"Gera reconhecimento popular.",resumo:"Redução da fila cirúrgica.",objetivo:"Diminuir cirurgias reprimidas.",justificativa:"Fila prolongada compromete qualidade de vida.",estrategia:["Convênios regionais","Metas trimestrais"],resultados:["Melhora clínica"]},
+{titulo:"UBS 12h",area:"Saúde",impacto:"Acesso ampliado",impactoPolitico:"Beneficia trabalhadores.",resumo:"Ampliação de horário nas UBS.",objetivo:"Atender trabalhadores.",justificativa:"Horário comercial limita acesso.",estrategia:["Escala diferenciada"],resultados:["Menos UPA"]},
+{titulo:"Farmácia Municipal Ampliada",area:"Saúde",impacto:"Satisfação direta",impactoPolitico:"Reduz desgaste por falta de medicamentos.",resumo:"Controle digital de estoque.",objetivo:"Evitar desabastecimento.",justificativa:"Faltas prejudicam tratamentos.",estrategia:["Sistema digital","Centralização logística"],resultados:["Regularidade"]},
+{titulo:"Saúde no Bairro",area:"Saúde",impacto:"Proximidade comunitária",impactoPolitico:"Fortalece presença nos bairros.",resumo:"Unidade móvel.",objetivo:"Levar atendimento.",justificativa:"Barreiras geográficas.",estrategia:["Cronograma mensal"],resultados:["Cobertura ampliada"]},
+{titulo:"Odonto Móvel",area:"Saúde",impacto:"Impacto infantil",impactoPolitico:"Grande adesão familiar.",resumo:"Atendimento odontológico itinerante.",objetivo:"Atender escolas.",justificativa:"Problemas dentários prejudicam aprendizado.",estrategia:["Unidade equipada"],resultados:["Redução cáries"]},
+{titulo:"Óculos para Todos",area:"Saúde",impacto:"Impacto funcional",impactoPolitico:"Alta aprovação popular.",resumo:"Fornecimento gratuito.",objetivo:"Melhorar visão.",justificativa:"Baixa visão compromete desempenho.",estrategia:["Triagem UBS"],resultados:["Melhora escolar"]},
+{titulo:"Saúde da Mulher Intensivo",area:"Saúde",impacto:"Alta adesão feminina",impactoPolitico:"Engajamento do público feminino.",resumo:"Campanhas preventivas.",objetivo:"Ampliar exames.",justificativa:"Diagnóstico precoce salva vidas.",estrategia:["Mutirões"],resultados:["Detecção precoce"]},
+{titulo:"Telemedicina Municipal",area:"Saúde",impacto:"Modernização",impactoPolitico:"Imagem inovadora.",resumo:"Especialistas via remoto.",objetivo:"Facilitar acesso.",justificativa:"Deslocamentos geram custo.",estrategia:["Sala equipada"],resultados:["Menos deslocamento"]},
+{titulo:"Escola Pintada e Climatizada",area:"Educação",impacto:"Impacto visual",impactoPolitico:"Alta repercussão positiva.",resumo:"Reforma e climatização.",objetivo:"Melhorar ambiente.",justificativa:"Ambiente impacta rendimento.",estrategia:["Pintura","Ar-condicionado"],resultados:["Ambiente confortável"]},
+{titulo:"Kit Escolar Universal",area:"Educação",impacto:"Redução desigualdade",impactoPolitico:"Aprovação das famílias.",resumo:"Material garantido.",objetivo:"Garantir igualdade.",justificativa:"Falta prejudica aprendizado.",estrategia:["Compra centralizada"],resultados:["Menos evasão"]},
+{titulo:"Escola Digital",area:"Educação",impacto:"Inovação",impactoPolitico:"Imagem moderna.",resumo:"Tablets e Wi-Fi.",objetivo:"Modernizar ensino.",justificativa:"Tecnologia aumenta engajamento.",estrategia:["Aquisição tablets"],resultados:["Melhora pedagógica"]},
+{titulo:"Merenda Premium Nutricional",area:"Educação",impacto:"Impacto familiar",impactoPolitico:"Aprovação popular.",resumo:"Cardápio supervisionado.",objetivo:"Elevar padrão nutricional.",justificativa:"Boa alimentação melhora rendimento.",estrategia:["Nutricionista"],resultados:["Desempenho escolar"]},
+{titulo:"Professor Valorizado",area:"Educação",impacto:"Engajamento docente",impactoPolitico:"Fortalece relação com categoria.",resumo:"Incentivo por metas.",objetivo:"Estimular desempenho.",justificativa:"Reconhecimento aumenta produtividade.",estrategia:["Metas claras"],resultados:["Melhora indicadores"]},
+{titulo:"Escola Aberta no Fim de Semana",area:"Educação",impacto:"Redução ociosidade",impactoPolitico:"Integração comunitária.",resumo:"Uso comunitário.",objetivo:"Ampliar atividades.",justificativa:"Espaço ocioso pode gerar benefício.",estrategia:["Abertura supervisionada"],resultados:["Fortalecimento comunitário"]},
+{titulo:"Reforço Escolar Gratuito",area:"Educação",impacto:"Melhora IDEB",impactoPolitico:"Melhora indicadores oficiais.",resumo:"Monitores em português e matemática.",objetivo:"Reduzir evasão.",justificativa:"Defasagens aumentam reprovação.",estrategia:["Contratação monitores"],resultados:["Melhora rendimento"]},
+{titulo:"Microcrédito Municipal",area:"Economia",impacto:"Geração de renda",impactoPolitico:"Apoio de empreendedores.",resumo:"Fundo rotativo.",objetivo:"Fomentar negócios.",justificativa:"Pequenos negócios movem economia.",estrategia:["Crédito reduzido"],resultados:["Renda local"]},
+{titulo:"Capacita Jovem",area:"Economia",impacto:"Empregabilidade",impactoPolitico:"Forte apelo juvenil.",resumo:"Cursos profissionalizantes.",objetivo:"Inserir jovens.",justificativa:"Qualificação reduz desemprego.",estrategia:["Parceria SENAI"],resultados:["Mais empregos"]},
+{titulo:"Banco de Empregos Municipal",area:"Economia",impacto:"Redução desemprego",impactoPolitico:"Alta visibilidade.",resumo:"Plataforma integrada.",objetivo:"Conectar empresas.",justificativa:"Falta conexão oferta-demanda.",estrategia:["Cadastro digital"],resultados:["Mais contratações"]},
+{titulo:"Incentivo Fiscal a Pequenos Negócios",area:"Economia",impacto:"Atração empresarial",impactoPolitico:"Fortalece relação setor produtivo.",resumo:"Isenção parcial.",objetivo:"Estimular formalização.",justificativa:"Amplia base futura.",estrategia:["Redução temporária"],resultados:["Expansão empresarial"]},
+{titulo:"Compras Públicas no Comércio Local",area:"Economia",impacto:"Dinheiro circulando",impactoPolitico:"Aprovação comércio local.",resumo:"Priorizar fornecedores locais.",objetivo:"Fortalecer economia.",justificativa:"Retorno financeiro interno.",estrategia:["Adequação licitações"],resultados:["Aquecimento econômico"]},
+{titulo:"Mulher Empreendedora",area:"Social",impacto:"Autonomia feminina",impactoPolitico:"Alto apoio social.",resumo:"Capacitação + crédito.",objetivo:"Autonomia financeira.",justificativa:"Programas femininos geram retorno social.",estrategia:["Turmas exclusivas"],resultados:["Empoderamento"]},
+{titulo:"Academia ao Ar Livre",area:"Saúde",impacto:"Alta visibilidade",impactoPolitico:"Imagem de cuidado.",resumo:"Instalação em praças.",objetivo:"Estimular atividade física.",justificativa:"Promoção preventiva.",estrategia:["Instalação padronizada"],resultados:["Mais atividade física"]},
+{titulo:"Castração Gratuita (Pet Amigo)",area:"Pets",impacto:"Engajamento popular",impactoPolitico:"Grande apoio protetores.",resumo:"Mutirões trimestrais.",objetivo:"Controle animal.",justificativa:"Reduz abandono e zoonoses.",estrategia:["Cadastro e mutirão"],resultados:["Redução abandono"]}
+];
+
+const grid=document.getElementById("grid");
+const searchInput=document.getElementById("searchInput");
+const detail=document.getElementById("detail");
+const detailContent=document.getElementById("detailContent");
+
+function render(list){
+grid.innerHTML=list.map((p,i)=>`
+<div class="card" onclick="openDetail(${i})">
+<h3>${p.titulo}</h3>
+<p><strong>Área:</strong> ${p.area}</p>
+<p>${p.resumo}</p>
+<p><strong>Impacto:</strong> ${p.impacto}</p>
+</div>`).join("");
+}
+
+function openDetail(i){
+const p=projetos[i];
+detailContent.innerHTML=`
+<h2>${p.titulo}</h2>
+<div class="section"><h4>Objetivo</h4><p>${p.objetivo}</p></div>
+<div class="section"><h4>Justificativa</h4><p>${p.justificativa}</p></div>
+<div class="section"><h4>Estratégia</h4><ul>${p.estrategia.map(e=>`<li>${e}</li>`).join("")}</ul></div>
+<div class="section"><h4>Resultados</h4><ul>${p.resultados.map(e=>`<li>${e}</li>`).join("")}</ul></div>
+<div class="section"><h4>Impacto Político</h4><p>${p.impactoPolitico}</p></div>
+<button onclick="closeDetail()">Voltar</button>`;
+detail.style.display="block";
+}
+
+function closeDetail(){detail.style.display="none";}
+
+searchInput.addEventListener("input",()=>{
+const term=searchInput.value.toLowerCase();
+const filtered=projetos.filter(p=>Object.values(p).join(" ").toLowerCase().includes(term));
+render(filtered);
+});
+
+render(projetos);
+
+if("serviceWorker"in navigator){
+navigator.serviceWorker.register("sw.js");
+}
+</script>
+<!-- ===== JINGLE CAMPANHA ===== -->
+
+<audio id="jingleAudio" loop>
+  <source src="jingle.mp3" type="audio/mpeg">
+</audio>
+
+<button id="jingleBtn" onclick="toggleJingle()">
+  🎵 Ativar Jingle
+</button>
+
+<style>
+#jingleBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:14px 18px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(90deg,#a855f7,#0ea5e9);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(168,85,247,.5);
+  z-index:9999;
+  transition:.3s;
+}
+
+#jingleBtn:hover{
+  box-shadow:0 0 35px rgba(14,165,233,.6);
+}
+</style>
+
+<script>
+const jingle = document.getElementById("jingleAudio");
+const btn = document.getElementById("jingleBtn");
+
+let playing = false;
+
+function toggleJingle(){
+  if(!playing){
+    jingle.volume = 0.35;
+    jingle.play();
+    btn.innerText = "🔇 Pausar Jingle";
+    playing = true;
+  } else {
+    jingle.pause();
+    btn.innerText = "🎵 Ativar Jingle";
+    playing = false;
+  }
+}
+</script>
+
+</body>
+</html>
